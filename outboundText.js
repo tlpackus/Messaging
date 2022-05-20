@@ -1,3 +1,11 @@
+inputData = {
+    owner: 'Devon Cowell',
+    numbers: '5033334444,788776,N/A',
+    devoncowell: '15035033030',
+    alexis: '7777777777',
+    parentTypeIdentifier: '21'
+}
+
 function parentNameHandler(newParentId) {
 let parentNameFix = newParentId;
 switch (parentNameFix) {

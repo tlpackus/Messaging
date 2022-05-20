@@ -20,7 +20,7 @@
 
 ## Commit Aligned Performance Documentation
 
-*_runtime meta
+* _runtime meta
 memory used mb
 57
 duration ms
