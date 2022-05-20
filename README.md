@@ -20,10 +20,10 @@
 
 ## Commit Aligned Performance Documentation
 
-*_runtime_meta
-memory_used_mb
+*_runtime meta
+memory used mb
 57
-duration_ms
+duration ms
 31_
 
 ## Known Bugs
