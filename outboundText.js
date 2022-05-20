@@ -30,18 +30,16 @@ for (let i = 0; i < dirtyNumberString.length; i++) {
     cleanedCustomerPhone += dirtyNumberString[i];
     } else {
     cleanedCustomerPhone += "";
-    }
-    
-}
-console.log(cleanedCustomerPhone);
-return cleanedCustomerPhone;
+    }  
+  }
+  return checkOne(cleanedCustomerPhone);
 }
 
 function checkOne(string){ 
 if (string[0] != "1") {
-    return ("1" + string);
+    return lengthCheck("1" + string);
 } else {
-    return string;
+    return lengthCheck(string);
 }
 }
 
@@ -61,10 +59,7 @@ function cleanNumbers(numbers){
 let numberArray = numbers.split(",");
 let selectedNumberString = numberArray[0];
 let spaceRemovedString = selectedNumberString.split(" ").join("");
-let integerConfirmedString = removeNonIntegers(spaceRemovedString);
-let firstNumberConfirmedInString = checkOne(integerConfirmedString);
-let finalCustomerNumber = lengthCheck(firstNumberConfirmedInString);
-return finalCustomerNumber;
+return removeNonIntegers(spaceRemovedString);
 };
 
 function newMessageHandler(newMessageData) {
@@ -82,8 +77,8 @@ output = {
     ownerNumber: ownerConfirmedNumber.toString(),
     parentName: confirmedParentName,
     customerNumber: confirmedCustomerPhone
-};
-return output;
+    };
+    return output;
 };
 
 

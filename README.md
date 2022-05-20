@@ -12,11 +12,9 @@
 
 ## Description
 
-
-
 ## Setup/Installation Requirements
 
-* 
+*
 
 ## Commit Aligned Performance Documentation
 
@@ -25,6 +23,12 @@ memory used mb
 57
 duration ms
 31_
+
+* _runtime meta
+memory used mb
+56
+duration ms
+20_
 
 ## Known Bugs
 
