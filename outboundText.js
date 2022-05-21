@@ -32,27 +32,17 @@ for (let i = 0; i < dirtyNumberString.length; i++) {
     cleanedCustomerPhone += "";
     }  
   }
-  return checkOne(cleanedCustomerPhone);
-}
-
-function checkOne(string){ 
-if (string[0] != "1") {
-    return lengthCheck("1" + string);
-} else {
-    return lengthCheck(string);
-}
+  return lengthCheck(cleanedCustomerPhone);
 }
 
 function lengthCheck(number) {
-let correctLengthNumber = "";
-if (number.length > 11) {
-    return "the customer number entered is too long";
-} else if (number.length < 11) {
-    return "the customer number entered is too short";
-} else {
-    correctLengthNumber = number;
-}
-return correctLengthNumber;
+    if (number.length > 10) {
+        return number;
+    } else if (number.length === 10) {
+        return ("1" + number);
+    } else {
+        return "Number entered is too short";
+    }
 }
 
 function cleanNumbers(numbers){

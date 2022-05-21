@@ -30,6 +30,12 @@ memory used mb
 duration ms
 20_
 
+* _runtime meta
+memory used mb
+56
+duration ms
+under 10_
+
 ## Known Bugs
 
 *
