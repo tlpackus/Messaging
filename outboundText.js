@@ -36,12 +36,33 @@ for (let i = 0; i < dirtyNumberString.length; i++) {
 }
 
 function lengthCheck(number) {
-    if (number.length > 10) {
-        return number;
+    const error = "number entered is too long or the country code is incorrect";
+    if (number.length < 10) {
+        return "customer number is too short";
     } else if (number.length === 10) {
         return ("1" + number);
+    } else if (number.length === 11) {
+      if (number[0] === 1 || number[0] === 7){
+          return number;
+      } else {
+          return error;
+      }
+    } else if (number.length === 12 || number.length === 13) {
+      if (number[0] === 1) {
+          return error;
+      } else {
+          return number;
+      }
+    }  else if (number.length === 14) {
+      if (number[1]===1) {
+          return error;
+      } else if (number[0] !== 1) {
+          return error;
+      } else {
+          return number;
+      }
     } else {
-        return "Number entered is too short";
+        return "error";
     }
 }
 
