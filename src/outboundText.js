@@ -6,15 +6,7 @@
 //     parentTypeIdentifier: '21'
 // }
 
-export default class InputData {
-    constructor(owner, numbers, parentTypeIdentifier) {
-        this.owner = owner;
-        this.numbers = numbers;
-        this.parentTypeIdentifier = parentTypeIdentifier;
-    }
-}
-
-function parentNameHandler(newParentId) {
+export function parentNameHandler(newParentId) {
 let parentNameFix = newParentId;
 switch (parentNameFix) {
     case ('21'):
@@ -31,7 +23,7 @@ switch (parentNameFix) {
     };
 };
 
-function removeNonIntegers (dirtyNumberString) {
+export function removeNonIntegers (dirtyNumberString) {
 let cleanedCustomerPhone = "";
 for (let i = 0; i < dirtyNumberString.length; i++) {
     if (!isNaN(dirtyNumberString[i])) {
@@ -43,7 +35,7 @@ for (let i = 0; i < dirtyNumberString.length; i++) {
   return lengthCheck(cleanedCustomerPhone);
 }
 
-function lengthCheck(number) {
+export function lengthCheck(number) {
     const error = "number entered is too long or the country code is incorrect";
     if (number.length < 10) {
         return "customer number is too short";
@@ -74,14 +66,14 @@ function lengthCheck(number) {
     }
 }
 
-function cleanNumbers(numbers){
+export function cleanNumbers(numbers){
     let numberArray = numbers.split(",");
     let selectedNumberString = numberArray[0];
     let spaceRemovedString = selectedNumberString.split(" ").join("");
     return removeNonIntegers(spaceRemovedString);
 };
 
-function newMessageHandler(newMessageData) {
+export function newMessageHandler(newMessageData) {
     let ownerNameLowCase = newMessageData.owner.toLowerCase();
     let ownerNameReadyToCompare = ownerNameLowCase.split(" ").join("");
     let keyArray = Object.keys(newMessageData);
@@ -91,11 +83,11 @@ function newMessageHandler(newMessageData) {
     let confirmedParentName = parentNameHandler(newMessageData.parentTypeIdentifier);
     let confirmedCustomerPhone = cleanNumbers(newMessageData.numbers);
     console.log(confirmedCustomerPhone);
-    output = {
+    return {
         ownerName: newMessageData.owner,
         ownerNumber: ownerConfirmedNumber.toString(),
         parentName: confirmedParentName,
         customerNumber: confirmedCustomerPhone
     };
-    return output;
+    
 };

@@ -1,20 +1,23 @@
-import InputData from "../src/outboundText";
-describe('InputData', () => {
-  let inputData;
-
-  beforeEach(() => {
-    inputData = new InputData('Devon Cowell', '5031231234, 11122, frs', '1894921');
-    inputData.devoncowell = '15990947474';
-    inputData.othersalesmember = '13434441234'
-  })
-
+import { newMessageHandler } from "../src/outboundText";
+describe('newMessageHandler', () => {
+  const inputData = {
+    owner: 'Devon Cowell',
+    numbers: '5033334444,788776,N/A',
+    devoncowell: '15035033030',
+    alexis: '7777777777',
+    parentTypeIdentifier: '21'
+  }
+  let output = newMessageHandler(inputData);
   test('should correctly creat an InputData object with these key value pairs', () => {
     expect(inputData.owner).toEqual('Devon Cowell');
-    expect(inputData.numbers).toEqual('5031231234, 11122, frs');
-    expect(inputData.parentTypeIdentifier).toEqual('1894921');
-    expect(inputData.devoncowell).toEqual('15990947474');
-    expect(inputData.othersalesmember).toEqual('13434441234');
+    expect(inputData.numbers).toEqual('5033334444,788776,N/A');
+    expect(inputData.parentTypeIdentifier).toEqual('21');
+    expect(inputData.devoncowell).toEqual('15035033030');
+    expect(inputData.alexis).toEqual('7777777777');
   });
+
+  test('code correctly outputs owner name', () => {
+    expect(output.ownerName).toEqual('Devon Cowell');
+  })
   
-  test('')
 })
