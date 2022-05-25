@@ -31,15 +31,15 @@ switch (newParentId) {
 };
 
 export function removeNonIntegers (dirtyNumberString) {
-let cleanedCustomerPhone = "";
-for (let i = 0; i < dirtyNumberString.length; i++) {
-    if (!isNaN(dirtyNumberString[i])) {
-    cleanedCustomerPhone += dirtyNumberString[i];
-    } else {
-    cleanedCustomerPhone += "";
-    }  
-  }
-  return lengthCheck(cleanedCustomerPhone);
+    let cleanedCustomerPhone = "";
+    for (let i = 0; i < dirtyNumberString.length; i++) {
+        if (!isNaN(dirtyNumberString[i])) {
+        cleanedCustomerPhone += dirtyNumberString[i];
+        } else {
+        cleanedCustomerPhone += "";
+        }  
+    }
+    return lengthCheck(cleanedCustomerPhone);
 }
 
 export function lengthCheck(number) {
@@ -49,27 +49,27 @@ export function lengthCheck(number) {
     } else if (number.length === 10) {
         return ("1" + number);
     } else if (number.length === 11) {
-      if (number[0] === 1 || number[0] === 7){
-          return number;
-      } else {
-          return error;
-      }
+        if (number[0] === '1' || number[0] === '7'){;
+            return number;
+        } else {
+            return error;
+        }
     } else if (number.length === 12 || number.length === 13) {
-      if (number[0] === 1) {
-          return error;
-      } else {
-          return number;
-      }
+        if (number[0] === '1') {
+            return error;
+        } else {
+            return number;
+        }
     }  else if (number.length === 14) {
-      if (number[1]===1) {
-          return error;
-      } else if (number[0] !== 1) {
-          return error;
-      } else {
-          return number;
-      }
+        if (number[1]==='1') {
+            return error;
+        } else if (number[0] != 1) {
+            return error;
+        } else {
+            return number;
+        }
     } else {
-        return "error";
+        return error;
     }
 }
 
