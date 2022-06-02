@@ -45,6 +45,7 @@ describe('newMessageHandler', () => {
     expect(cleanNumbers('5103444123')).toEqual('15103444123');
     expect(cleanNumbers('1703444123')).toEqual('11703444123');
     expect(cleanNumbers('7903444123')).toEqual('17903444123');
+    expect(cleanNumbers('+1 (503) ')).toEqual('17903444123');
   })
 
   test('correctly handles customer number in the case its 11 characters', () => {
@@ -52,6 +53,7 @@ describe('newMessageHandler', () => {
     expect(cleanNumbers('19939%93@434 3')).toEqual('19939934343');
     expect(cleanNumbers('11939934343')).toEqual('11939934343');
     expect(cleanNumbers('19939934343')).toEqual('19939934343');
+    expect(cleanNumbers('17863215541')).toEqual('17863215541');
   })
 
   test('correctly handles customer number in the case its 12 or 13 characters long', () => {
